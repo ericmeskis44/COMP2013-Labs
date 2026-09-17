@@ -10,35 +10,30 @@ interface Listing {
   MLSnumber: string;
   photo: string;
   description: string;
-  propertySummary: PropertySummary;
-  buildingSummary: BuildingSummary;
+  propertySummary: {
+    propertyType: string;
+    buildingType: string;
+    storeys: string;
+    title: string;
+    builtIn: string;
+    taxes: string;
+    parking: string;
+  };
+  buildingSummary: {
+    bedrooms: string;
+    bathrooms: string;
+    buildingFeatures: string[];
+    cooling: string;
+    heating: string;
+    sewer: string;
+    water: string;
+    size: string;
+  };
 
   // Task 3
   isSold?: boolean;
   currentOwner?: string;
 }
-
-interface PropertySummary {
-  propertyType: string;
-  buildingType: string;
-  storeys: string;
-  title: string;
-  builtIn: string;
-  taxes: string;
-  parking: string;
-}
-
-interface BuildingSummary {
-  bedrooms: string;
-  bathrooms: string;
-  buildingFeatures: string[];
-  cooling: string;
-  heating: string;
-  sewer: string;
-  water: string;
-  size: string;
-}
-
 
 
 const listings: Listing[] = [
@@ -564,7 +559,7 @@ function realtorFees(listing: Listing): number {
 
   const rate = numericPrice <= 450000 ? 0.025 : 0.02;
 
-  return numericPrice * rate;
+  return Math.floor(numericPrice * rate);
 }
 
 /**
