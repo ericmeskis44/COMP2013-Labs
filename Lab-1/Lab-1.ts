@@ -2,6 +2,40 @@
 //Task 1:
 //Create an interface Listing that will represent an object
 //from the listings array below to resolve the type error.
+interface Listing {
+  id: string;
+  price: string;
+  address: string;
+  postalCode: string;
+  MLSnumber: string;
+  photo: string;
+  description: string;
+  propertySummary: PropertySummary;
+  buildingSummary: BuildingSummary;
+}
+
+interface PropertySummary {
+  propertyType: string;
+  buildingType: string;
+  storeys: string;
+  title: string;
+  builtIn: string;
+  taxes: string;
+  parking: string;
+}
+
+interface BuildingSummary {
+  bedrooms: string;
+  bathrooms: string;
+  buildingFeatures: string[];
+  cooling: string;
+  heating: string;
+  sewer: string;
+  water: string;
+  size: string;
+}
+
+
 
 const listings: Listing[] = [
   {
