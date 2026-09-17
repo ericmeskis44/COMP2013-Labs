@@ -12,6 +12,10 @@ interface Listing {
   description: string;
   propertySummary: PropertySummary;
   buildingSummary: BuildingSummary;
+
+  // Task 3
+  isSold?: boolean;
+  currentOwner?: string;
 }
 
 interface PropertySummary {
@@ -529,6 +533,11 @@ const listing0: Listing = listings[0];
  * Make sure to add them as OPTIONAL properties
  */
 //WRITE YOUR CODE BELOW
+const listing0Updated: Listing = {
+  ...listing0,
+  isSold: false,
+  currentOwner: "Jane Doe",
+};
 
 /**
  * NOTE: THIS TASK IS TRICKY!
