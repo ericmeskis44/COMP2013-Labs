@@ -573,6 +573,9 @@ function realtorFees(listing: Listing): number {
  * according to their built year
  */
 //WRITE YOUR CODE BELOW
+const listingAscendingly: Listing[] = [...listings].sort(
+  (a, b) => parseInt(a.propertySummary.builtIn) - parseInt(b.propertySummary.builtIn)
+);
 
 /**
  * Task-6:
@@ -589,4 +592,5 @@ console.log("Task 3:", listing0Updated);
 console.log("Task 4:", realtorFees(listings[2]));
 console.log("Task 4:", realtorFees(listings[6]));
 
+console.log("Task 5:", listingAscendingly);
 
