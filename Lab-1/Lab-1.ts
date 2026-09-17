@@ -585,6 +585,10 @@ const listingAscendingly: Listing[] = [...listings].sort(
  * This array should result in two listings only
  */
 //WRITE YOUR CODE BELOW
+const townhouseListings: Listing[] = listings.filter(
+  (listing) => listing.propertySummary.buildingType === "Townhouse"
+);
+
 console.log("Task 2:", listing0);
 
 console.log("Task 3:", listing0Updated);
@@ -593,4 +597,6 @@ console.log("Task 4:", realtorFees(listings[2]));
 console.log("Task 4:", realtorFees(listings[6]));
 
 console.log("Task 5:", listingAscendingly);
+
+console.log("Task 6:", townhouseListings);
 
