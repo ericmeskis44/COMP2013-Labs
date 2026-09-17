@@ -555,6 +555,17 @@ const listing0Updated: Listing = {
  * AND CHECK parseInt() to help changing quantifiable strings to numbers
  */
 //WRITE YOUR CODE BELOW
+function realtorFees(listing: Listing): number {
+  // Remove $ and commas, then parse
+  const numericPrice = parseInt(
+    listing.price.replace("$", "").replace(/,/g, ""),
+    10
+  );
+
+  const rate = numericPrice <= 450000 ? 0.025 : 0.02;
+
+  return numericPrice * rate;
+}
 
 /**
  * Task-5:
@@ -571,3 +582,11 @@ const listing0Updated: Listing = {
  * This array should result in two listings only
  */
 //WRITE YOUR CODE BELOW
+console.log("Task 2:", listing0);
+
+console.log("Task 3:", listing0Updated);
+
+console.log("Task 4:", realtorFees(listings[2]));
+console.log("Task 4:", realtorFees(listings[6]));
+
+
